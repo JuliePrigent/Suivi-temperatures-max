@@ -65,13 +65,42 @@ tab["Maximale"] = liste_max
 
 print(tab)
 
-#Set up a line chart 
+#SET UO A LINE CHART
 
 import pandas as pd
-import matplotlib as plt
+import matplotlib.pyplot as plt
+import numpy as np
 
 df=pd.DataFrame(data=tab)
-print(df)
+figure = df.plot()
 
-df.plot()
+# set the plot title.
+plt.title('Températures maximales sur les 7 prochains jours')
+#Removed the plot legend
+figure.get_legend().remove()
 
+
+#Define the y-axis scale 
+plt.ylim(ymin=0,ymax=5+max(tab["Maximale"]))
+
+#Add the y-axis label on the line 
+for i, v in enumerate(tab["Maximale"]):
+    figure.annotate(str(v), xy=(i,v), xytext=(-7,7), textcoords='offset points')
+
+#Set the y-axis label (removed)
+figure.axes.get_yaxis().set_visible(False)
+
+
+#Set the x-axis label
+tickvalues = df.index
+plt.xticks(ticks = tickvalues ,labels = tab["Jour"], rotation = 'vertical')
+
+
+#Add the city name on the plot
+plt.figtext(0.5, 0.4,
+            Nom_ville,
+            horizontalalignment ="left", 
+            verticalalignment ="bottom", 
+            wrap = True, fontsize = 14)
+plt.show()  
+    
