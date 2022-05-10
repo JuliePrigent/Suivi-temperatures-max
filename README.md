@@ -5,4 +5,4 @@ Récupère les températures maximales prévues pour la semaine d'une ville sais
 
 
 Output :
-![Results_weather](https://user-images.githubusercontent.com/101262838/167617686-27614baf-a353-441f-aacc-63ed33ee6b52.PNG)
+![Results_weather](https://user-images.githubusercontent.com/101262838/167625859-af6cb1c9-b98d-4b56-bc07-e0d89cafa340.PNG)
